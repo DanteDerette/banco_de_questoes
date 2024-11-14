@@ -34,6 +34,40 @@
 <body class="container-fluid">
     <div class="row">
         <div class="col">
+            <!-- ID da Questão -->
+            <div class="row">
+                <div class="col">
+                    <label>ID</label>
+                    <input type="text" class="form-control"/>
+                </div>
+            </div>
+            
+            <!-- ENUNCIADO -->
+            <div class="row">
+                <div class="col">
+                    <label>Enunciado</label>
+                    <textarea class="form-control" rows="5" oninput="gera_enunciado(this)"></textarea>
+                    <script>
+                        function gera_enunciado(element){
+                            var this_value = element.value
+                            var target_element = document.getElementById('resultado_enunciado')
+                            target_element.innerHTML = this_value                            
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" id="resultado_enunciado">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row" style="display: none;">
+        <div class="col">
 
             <!-- ENUNCIADO -->
             <div class="row">
@@ -88,6 +122,7 @@
         element.className = 'q-option-item botao_cheio'
     }
 </script>
+
 <style>
     body{
         font-family : Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
